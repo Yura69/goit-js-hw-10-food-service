@@ -4,13 +4,12 @@ const theme = {
 };
 
 const checkboxRef = document.querySelector('.theme-switch__toggle');
-
-if (localStorage.getItem('DARK') !== null) {
-  document.body.classList.add(theme.DARK);
+if (theme.DARK !== null) {
   checkboxRef.checked = true;
+  document.body.classList.add(theme.LIGHT);
 } else {
   checkboxRef.checked = false;
-  document.body.classList.add(theme.LIGHT);
+  document.body.classList.add(theme.DARK);
 }
 
 checkboxRef.addEventListener('change', () => {
@@ -18,11 +17,9 @@ checkboxRef.addEventListener('change', () => {
     document.body.classList.add('dark-theme');
     document.body.classList.remove('light-theme');
     localStorage.setItem('theme', 'DARK');
-    localStorage.removeItem('theme', 'LIGHT');
   } else {
     document.body.classList.add('light-theme');
     document.body.classList.remove('dark-theme');
     localStorage.setItem('theme', 'LIGHT');
-    localStorage.removeItem('theme', 'DARK');
   }
 });
