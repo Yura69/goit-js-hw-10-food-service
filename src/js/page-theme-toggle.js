@@ -4,12 +4,12 @@ const theme = {
 };
 
 const checkboxRef = document.querySelector('.theme-switch__toggle');
-if (theme.DARK !== null) {
+if (localStorage.value === 'DARK') {
   checkboxRef.checked = true;
-  document.body.classList.add(theme.LIGHT);
+  document.body.classList.add(theme.DARK);
 } else {
   checkboxRef.checked = false;
-  document.body.classList.add(theme.DARK);
+  document.body.classList.add(theme.LIGHT);
 }
 
 checkboxRef.addEventListener('change', () => {
