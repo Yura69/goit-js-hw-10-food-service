@@ -4,6 +4,7 @@ const theme = {
 };
 
 const checkboxRef = document.querySelector('.theme-switch__toggle');
+console.log('Проверка на измененния кода рабой страницы в Гите');
 if (localStorage.value === 'DARK') {
   checkboxRef.checked = true;
   document.body.classList.add(theme.DARK);
